@@ -18,7 +18,7 @@ if __name__ == '__main__':
     filename = argv[1] if len(argv) > 1 else None
     if filename:
         with open(filename) as f:
-            lines = f.readlines()
+            test_sentences = f.readlines()
     else:
         test_sentences = ["I’ll redesign the website by next Tuesday",
                           "John will follow up with his sales team about the compensation plan",
