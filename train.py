@@ -180,7 +180,6 @@ def train():
 # function for evaluating the model
 def evaluate():
     print("\nEvaluating...")
-    start_time = time.time()
 
     # deactivate dropout layers
     model.eval()
@@ -192,12 +191,8 @@ def evaluate():
 
     # iterate over batches
     for step, batch in enumerate(val_dataloader):
-
         # Progress update every 50 batches.
         if step % 50 == 0 and not step == 0:
-            # Calculate elapsed time in minutes.
-            elapsed = time.time() - start_time
-
             # Report progress.
             print('  Batch {:>5,}  of  {:>5,}.'.format(step, len(val_dataloader)))
 
@@ -239,7 +234,7 @@ valid_losses = []
 
 # for each epoch
 for epoch in range(epochs):
-
+    start_time = time.time()
     print('\n Epoch {:} / {:}'.format(epoch + 1, epochs))
 
     # train model
@@ -259,3 +254,4 @@ for epoch in range(epochs):
 
     print(f'\nTraining Loss: {train_loss:.3f}')
     print(f'Validation Loss: {valid_loss:.3f}')
+    print(f'Time taken for 1 epoch: {(time.time() - start_time) // 60} mins\n')
