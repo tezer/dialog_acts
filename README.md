@@ -62,13 +62,17 @@ There are four files:
 - **da_model.py**: contains the model and basic settings
 - **train.py**: contains the training and evaluation functions
 - **predict.py**: contains the prediction function and test set evaluation
-- **test.py**: contains three options for testing the model:
-  - if the test.py has a filename as its argument, it will try to load a list of sentences from the file specified by the argument.
-  - if the test.py has no argument, it will run the list of sentences from the task specification and turn into an interactive mode, where a user can type in any sentence to predict if it contains an actionable item.
+- **test.py**: contains three options for testing the model
 
 The checkpoints are saved in the *checkpoints* folder.
 
 The *data* folder contains the data files. 
+
+###How to run test.py
+- if the test.py has a filename as its argument, it will try to load a list of sentences from the file specified by the argument.
+- if the test.py has no argument, it will run the list of sentences from the task specification and turn into an interactive mode, where a user can type in any sentence to predict if it contains an actionable item.
+- to change model type, edit _model_name_ in _da_model.py_ (line 2) accordingly
+
 
 ###TODO
 - Train the model with unfrozen BERT layers at a learning rate of 1e-5
