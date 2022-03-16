@@ -49,7 +49,7 @@ Unfortunately, the aforementioned types are not equivalent to the actionable ite
 For model fine-tuning, I used 2 dense layers for _bert_base_uncased_ and 3 layers for _bert_large_uncased_. AdamW for optimization and loss function is CrossEntropyLoss.
 The learning rate was 1e-3 with BERT layers frozen.
 
-## Results
+### Results
 After training for 10 epochs, I tested the model on the test set and found that both models achieved the same accuracy of 0.7
 One of the ways of improvement of the model is to train the model with the BERT layers unfrozen and train it for more epochs.
 
